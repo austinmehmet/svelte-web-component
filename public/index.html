@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Svelte app</title>
+
+    <!-- <link rel='icon' type='image/png' href='/favicon.png'>
+	<link rel='stylesheet' href='/global.css'>
+	<link rel='stylesheet' href='/build/bundle.css'> -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="/build/bundle.js"></script>
+  </head>
+
+  <body>
+    <sf-agent
+      postalcode="75082"
+      clientid="7182-123-98716"
+      lob="auto"
+    ></sf-agent>
+  </body>
+  <script>
+    document.querySelector("sf-agent").$on("change", (e) => {
+      console.log(e.detail);
+    });
+  </script>
+</html>
